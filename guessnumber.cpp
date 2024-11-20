@@ -9,20 +9,17 @@ int main() {
 
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(0)));
-
-    cout << "Enter the lower limit of the range of numbers you want to guess from:" << endl;
-    cin >> l;
-    cout << "Enter the upper limit of the range (inclusive) of numbers you want to guess from:" << endl;
-    cin >> h;
-
     while (i) {
+        cout << "Enter the lower limit of the range of numbers you want to guess from:" << endl;
+        cin >> l;
+        cout << "Enter the upper limit of the range (inclusive) of numbers you want to guess from:" << endl;
+        cin >> h;
+
         // Generate a random number within the specified range
         a = l + (rand() % (h - l + 1));
         j = 0; // Reset the j flag for a new round
-
-        cout << "Guess the number:" << endl;
-
         while (!j) {
+            cout << "Guess the number:" << endl;
             cin >> b; // Get the user's guess
 
             if (a == b) {
@@ -35,7 +32,7 @@ int main() {
                 } else {
                     cout << "The number you guessed is smaller than the correct answer." << endl;
                 }
-                cout << "Try again or change the number? Enter 1 to try again or 0 to change:" << endl;
+                cout << "Try again or change the number? Enter 0 to try again or 1 to change:" << endl;
                 cin >> j; // Allow the user to continue guessing or change the number
             }
         }
